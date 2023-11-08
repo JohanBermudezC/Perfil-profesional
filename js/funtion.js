@@ -73,6 +73,11 @@ let array_mul = [
     {name:"jose", last_name:"Bermudez", age: "20"},
     {name:"francy", last_name:"Bermudez", age: "43"},
 ];
+
+for (let index = 0; index < array_mul.length; index++) {
+    console.log(array_mul[index].name+" " +array_mul[index].age);
+}
+
 // ******************************** OPERACIONES BASICAS 
 // SUMA
 var suma = number_one + number_two;
@@ -184,7 +189,7 @@ function box_onblur(){
 
 const btn_changeColor = document.querySelector("#change_color");
 
-btn_changeColor.addEventListener("click", ()=> {
+btn_changeColor.addEventListener("click", () => {
     document.body.style.backgroundColor = "rgb(0,0,20)"
     document.body.style.color = "#fff"
 });
@@ -208,3 +213,23 @@ form.addEventListener("submit", name_event => {
     }
     validation.innerText = info;
 })
+
+function load_page() {
+    document.getElementById("nombres").focus();
+    document.getElementById("apellidos").disabled = true;
+    let date = new Date();
+    console.log(date.getFullYear() );
+
+}
+function validate (){
+    let nombres = document.getElementById("nombres").value;
+    console.log(nombres);
+    alert(nombres.indexOf());
+    if (nombres.length > 2) {
+        document.getElementById("apellidos").disabled = false;
+        document.getElementById("apellidos").focus();   
+        document.getElementById("nombres").value = "";     
+    }
+}
+
+// split contrario join

@@ -6,22 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Johan Bermudez</title>
 </head>
-<body >
-    
-    <!-- onload="load_page()" -->
-
+<body onload="load_page()">
+     
     <label for="" id="box_one"></label>
     <label for="" id="box_two"></label>
     <br>
     <!-- <input type="text" id="box_onblur" onblur="box_onblur()" placeholder="Escriba algo aqui" size="30" > -->
     
-    <button id="change_color">CAMBIAR COLOR</button>
-     
+    <button onclick="enviar()">ENVIAR</button>
+    <button id="Limpiar">LIMPIAR</button>
+    <br>
     <br>
 
     <form id="form_register">
         <label for="nombres">Nombres</label>
-        <input type="text" id="nombres" size="30" placeholder="Please enter your name">
+        <input type="text" id="nombres" size="30" placeholder="Please enter your name" onblur="validate()">
 
         <br>
 
