@@ -1,29 +1,41 @@
 console.log("prueba de conexion");
-// ******************************** TIPO DE VARIABLES
+// ************** TIPO DE VARIABLES ***********
+
 // const PARA VARIABLES CONSTANTES 
+
 const pi = 3.1416;
 const pul = 2.54;
 const name = "Johan Sebastian Bermudez Contreras";
+
 // var PARA VARIABLES GLOBALES
+
 var cal_days= 13;
+
 // ler PARA VARIABLES DE BLOQUE O LOCALES 
+
 let j = 0;
 let counter = 0;
 
 
-// ******************************** FORMAS DE IMPRESION 
+// ********************** FORMAS DE IMPRESION 
 // alert 
 // alert(name);
-console.log(name);
-console.log(cal_days);
+
+//console.log(name);
+//console.log(cal_days);
 console.log("15");
-console.log(true);
+//console.log(true);
+
 // pantalla - body
-document.write(name);
+
+// document.write(name);
+
 document.getElementById("box_one").innerHTML = "<h1>Johan Bermudez</h1>"; 
-document.getElementById("box_two").innerText = "<h1>Johan Bermudez</h1>";
+//document.getElementById("box_two").innerText = "<h1>Johan Bermudez</h1>";
+
 // LIBRERIAS
-Swal.fire({
+
+/*Swal.fire({
     icon: 'info',
     title: 'Johan Bermudez',
     text: name,
@@ -31,18 +43,27 @@ Swal.fire({
     showConfirmButton: false,
     timer: 2000,
     position: 'center-end',
-})
+})*/
+
 // Swal.fire(name);
 
 // ******************************** TIPOS DE DATOS 
 // NUMERICOS  
+
 var number_one = 10;
 var number_two = 2.3;
+
 // STRING 
+
 var text = "Soy un texto";
+
 // BOOLEANOS
+
 var boolen = true ; //false 
+
 // ARRAY
+
+
 let array_num = [1,2,3,4,5];
 let array_tex =  ['lunes','martes','miércoles','jueves','viernes','sábado','domingo'];
 let array_mix = [1, "a", 2.4, "b"];
@@ -70,29 +91,29 @@ var modulo = number_one % number_two;
 console.log("modulo = "+ modulo);
 
 
-console.log(
-    "suma = "+ suma  +
-    " resta = "+ resta  +
-    " multiplicacion = "+ multiplicaion  +
-    " division = "+ division +
-    " modulo = "+ modulo  
-);
+// console.log(
+//     "suma = "+ suma  +
+//     " resta = "+ resta  +
+//     " multiplicacion = "+ multiplicaion  +
+//     " division = "+ division +
+//     " modulo = "+ modulo  
+// );
 
-var respuesta =     "suma = "+ suma  + "<br>" +
-"resta = "+ resta  + "<br>" +
-"multiplicacion = "+ multiplicaion  + "<br>" +
-"division = "+ division.toFixed(2)  + "<br>" + 
-"modulo = "+ modulo.toFixed(2)  ;
+// var respuesta =     "suma = "+ suma  + "<br>" +
+// "resta = "+ resta  + "<br>" +
+// "multiplicacion = "+ multiplicaion  + "<br>" +
+// "division = "+ division.toFixed(2)  + "<br>" + 
+// "modulo = "+ modulo.toFixed(2)  ;
 
-Swal.fire(respuesta);
+// Swal.fire(respuesta);
 
-Swal.fire({
-    showConfirmButton: false,
-    background: 'fff',
-    icon: 'success',
-    title: 'Respuesta:',
-    html: respuesta
-});
+// Swal.fire({
+//     showConfirmButton: false,
+//     background: 'fff',
+//     icon: 'success',
+//     title: 'Respuesta:',
+//     html: respuesta
+// });
 
 // ############ OPERADORES LOGICOS Y ESTRUCTURAS CONDICIONALES (inverse, )
 // AND && CON IF
@@ -145,6 +166,7 @@ do {
 function load_page() {
     // ejm();
     // ejm2();
+    alert("Kill yourself :D");
 }
 
 function ejm(){
@@ -161,3 +183,28 @@ function box_onblur(){
 }
 
 const btn_changeColor = document.querySelector("#change_color");
+
+btn_changeColor.addEventListener("click", ()=> {
+    document.body.style.backgroundColor = "rgb(0,0,20)"
+    document.body.style.color = "#fff"
+});
+
+const form       = document.getElementById("form_register");
+const nombres    = document.getElementById("nombres");
+const apellidos  = document.getElementById("apellidos");
+const validation = document.getElementById("validation");
+
+form.addEventListener("submit", name_event => {
+    // SUBMIT PARA FORMULARIOS
+    name_event.preventDefault();
+    let info = "";
+    if (nombres.value.length <= 2 || apellidos.value.length <= 2) {
+        info += "Nombres o Apellidos incorrectos";
+        validation.style.color = "red";
+    }
+    else {
+        info+= "Su nombre es " + nombres.value + " " + apellidos.value;
+        validation.style.color = "green";
+    }
+    validation.innerText = info;
+})
